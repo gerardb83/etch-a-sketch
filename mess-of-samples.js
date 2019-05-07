@@ -1,21 +1,6 @@
 const container = document.getElementById('container')
 
 
-function makeGrid(size) {
-    let gridSize = size * size;
-    for (i=0; i<gridSize; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        container.append(cell);
-        cell.addEventListener('mouseenter', function(e) {
-            const radio = document.getElementsByClassName('radio')
-            if radio.document.documentElement.value=="gridReg" 
-            cell.style.backgroundColor = 'black';
-        });
-    }
-    document.documentElement.style.setProperty("--rowNum", size);
-    document.documentElement.style.setProperty("--colNum", size);
-}
 
 makeGrid(16);
 
@@ -86,3 +71,23 @@ function makeGrid() {
         }
     }
 
+
+
+    function makeColor(cell){
+        if(cell.style.backgroundColor == `rgb(255, 255, 255)`){
+            const red=(Math.floor(Math.random()*(256-1))+1);
+            const green=(Math.floor(Math.random()*(256-1))+1);
+            const blue=(Math.floor(Math.random()*(256-1))+1);
+            const firstColor = `rgb(` + red + `,` + green + `,` + blue + `)`;
+            cell.style.backgroundColor = firstColor;        
+        } else {
+            let currentColor = cell.style.backgroundColor
+            currentColor = currentColor.replace(/[^\d,]/g,'').split(',');
+            for(i=0; i<currentColor.length; i++){
+                currentColor[i] = parseInt(currentColor[i]);
+                currentColor[i] = Math.floor(currentColor[i] * 0.2);
+            }
+            cell.style.backgroundColor = `rgb(` + currentColor[0] + `,` + currentColor[1] + `,` + currentColor[2] + `)`;
+        }
+      }
+    }

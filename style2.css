@@ -52,8 +52,3 @@ button:hover {
     display: block;
     float: left;
 }
-.darkCell {
-    background-color: var(--color);
-    display: block;
-    float: left;
-}
