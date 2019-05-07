@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+div#grid_container{
+	width:900px;
+	margin:0px auto;
+	height:860px;
+	border:#999 1px dashed;
+}
+div#grid_container > div{
+	position:absolute;
+	width: 291px;
+	border: #000 1px solid;
+}
+div#grid_container > div:nth-child(2n+0) {
+	background: #FFDC64;
+}
+div#grid_container > div:nth-child(2n+1) {
+    background: #FEC910;
+}
+div#grid_container > div > div{ padding: 20px; font-size: 27px; color:#D9A800; }
+</style>
+<script src='grid.js'></script>
+</head> 
+<body>
+<div id="grid_container">
+  <div style="height:140px;"> <div>1</div> </div>
+  <div style="height:200px;"> <div>2</div> </div>
+  <div style="height:120px;"> <div>3</div> </div>
+  <div style="height:180px;"> <div>4</div> </div>
+  <div style="height:150px;"> <div>5</div> </div>
+  <div style="height:160px;"> <div>6</div> </div>
+  <div style="height:180px;"> <div>7</div> </div>
+  <div style="height:170px;"> <div>8</div> </div>
+  <div style="height:160px;"> <div>9</div> </div>
+  <div style="height:180px;"> <div>10</div> </div>
+  <div style="height:150px;"> <div>11</div> </div>
+  <div style="height:160px;"> <div>12</div> </div>
+  <div style="height:130px;"> <div>13</div> </div>
+  <div style="height:140px;"> <div>14</div> </div>
+  <div style="height:210px;"> <div>15</div> </div>
+</div>
+</body> 
+</html>
